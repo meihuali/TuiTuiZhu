@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TuiTuiPig1.1
+  ~ Author：马靖乘
+  ~ Date：18-11-28 下午2:03
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="m"
+                type="String"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        android:background="@color/brightGray"
+            tools:context=".ui.fragment.otherserver.ExChangeProductFragment">
+
+        <com.designer.library.component.recycler.PageRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ex_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </com.designer.library.component.recycler.PageRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

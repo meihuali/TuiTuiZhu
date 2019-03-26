@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TTZ
+  ~ Author：马靖乘
+  ~ Date：18-12-4 下午3:18
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.OrderListModel.Data.Result" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view4"
+            style="@style/AppTheme.DividerBlankView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOrderSN"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{m.orderNoTv}"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintEnd_toStartOf="@+id/tvStatusPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4"
+            tools:text="Time" />
+
+        <TextView
+            android:id="@+id/tvStatusPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:gravity="end"
+            android:text="@{m.stateTv}"
+            android:maxLines="1"
+            android:textColor="@color/textRed"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvOrderSN"
+            tools:text="stock" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/dd_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderSN" />
+
+        <TextView
+            android:id="@+id/tvAddressee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toStartOf="@+id/tvMobile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3"
+            android:text="@{m.receiver}"
+            tools:text="收件人：张大仙" />
+
+        <TextView
+            android:id="@+id/tvMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAddressee"
+            android:text="@{m.receiverPhone}"
+            tools:text="12345" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:drawableStart="@drawable/ddgl_address"
+            android:drawablePadding="@dimen/dp_4"
+            android:ellipsize="end"
+            android:text="@{m.addressTv}"
+            android:maxLines="2"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddressee"
+            tools:text="Addressee" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_change"
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/bgGray"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_cv"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="@dimen/dp_15"
+                app:cardCornerRadius="@dimen/dp_8"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    img="@{m.products[0].productImage}"
+                    android:scaleType="centerCrop"
+                    placeHolder="@{@drawable/ic_normal_bg}"
+                    android:src="@drawable/ic_normal_bg" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:textSize="@dimen/sp_13"
+                android:text="@{m.products[0].productName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_cv"
+                app:layout_constraintTop_toTopOf="@+id/iv_cv"
+                tools:text="春夏季新生儿衣服礼盒0-3个月宝宝" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:textColor="@color/textColor"
+                android:text="@{m.priceTv}"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_cv"
+                app:layout_constraintStart_toEndOf="@+id/iv_cv"
+                tools:text="100经验值" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:textColor="@color/textDescription"
+                android:textSize="@dimen/sp_13"
+                dateFormat="@{`yyyy-MM-dd HH:mm`}"
+                dateMilli="@{m.orderCreateTime}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="2018-06-12 18:04" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_change"
+            android:text="@{m.tradeNoTv}"
+            android:paddingBottom="12dp"
+            gone="@{m.isShow}"
+            tools:text="快递单号：48297875224574845" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

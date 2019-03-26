@@ -1,0 +1,20 @@
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/29/18 6:22 PM
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="18dp"
+        android:height="18dp"
+        android:viewportWidth="18"
+        android:viewportHeight="18">
+    <path
+            android:pathData="M9,0C4.0205,0 0,4.0205 0,9C0,13.9795 4.0205,18 9,18C13.9795,18 18,13.9795 18,9C18,4.0205 13.9795,0 9,0M12.7807,12.7807C12.5409,13.0205 12.1199,13.0205 11.8801,12.7807L9,9.9006L6.1199,12.7807C5.8801,13.0205 5.4591,13.0205 5.2193,12.7807C4.9795,12.5409 4.9795,12.1199 5.2193,11.8801L8.0994,9L5.2193,6.1199C4.9795,5.8801 4.9795,5.4591 5.2193,5.2193C5.4591,4.9795 5.8801,4.9795 6.1199,5.2193L9,8.0994L11.8801,5.2193C12.1199,4.9795 12.5409,4.9795 12.7807,5.2193C13.0205,5.4591 13.0205,5.8801 12.7807,6.1199L9.9006,9L12.7807,11.8801C13.0819,12.1199 13.0819,12.538 12.7807,12.7807"
+            android:strokeWidth="1"
+            android:fillColor="#000000"
+            android:fillType="nonZero"
+            android:fillAlpha="0.3"
+            android:strokeColor="#00000000"/>
+</vector>

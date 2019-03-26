@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-17 下午4:39
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.RankingActivity"/>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.RankModel.Data.SelfCensus"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.activity.RankingActivity">
+
+        <FrameLayout
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/start_end_bg"/>
+
+        <FrameLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/dp_10">
+
+            <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="排行榜"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_17"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
+
+            <ImageView
+                    android:id="@+id/person_return"
+                    click="@{v}"
+                    android:layout_width="56dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_action_back"
+                    android:tint="@color/white"/>
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rank_iv"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:background="@drawable/bg_card_shadow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <ImageView
+                    android:id="@+id/ranking_iv"
+                    imgCircular="@{m.userHeadImg}"
+                    placeHolder="@{@drawable/ic_user_portrait_default}"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="36dp"
+                    android:src="@drawable/ic_user_portrait_default"
+                    app:layout_constraintBottom_toBottomOf="@+id/rank_iv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/rank_iv"/>
+
+            <TextView
+                    android:id="@+id/rank_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="@{m.userName}"
+                    app:layout_constraintStart_toEndOf="@+id/ranking_iv"
+                    app:layout_constraintTop_toTopOf="@+id/ranking_iv"
+                    tools:ignore="HardcodedText"
+                    tools:text="嘟嘟少女"/>
+
+            <TextView
+                    android:id="@+id/group_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/group_icon"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    invisible="@{m}"
+                    android:text="@{m.sort}"
+                    android:textColor="@color/textDescription"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/ranking_iv"
+                    app:layout_constraintStart_toStartOf="@+id/rank_name"
+                    tools:ignore="HardcodedText"
+                    tools:text="排名：382"/>
+
+            <TextView
+                    android:id="@+id/fans_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_35"
+                    android:drawableStart="@drawable/fensi"
+                    invisible="@{m}"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    android:text="@{m.num}"
+                    android:textColor="@color/textDescription"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/ranking_iv"
+                    app:layout_constraintStart_toEndOf="@+id/group_tv"
+                    tools:ignore="HardcodedText"
+                    tools:text="粉丝：382"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.designer.library.component.recycler.PageRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rank_iv">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rank_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </com.designer.library.component.recycler.PageRefreshLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

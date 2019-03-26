@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-15 下午7:21
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.AlipayAccountActivity"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.activity.AlipayAccountActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="@dimen/dp_11"
+                android:layout_marginEnd="@dimen/dp_11"
+                android:background="@drawable/rectangle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/xgzh_bg">
+
+                <TextView
+                        android:id="@+id/alipay_input_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_30"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:text="输入信息"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_20"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="HardcodedText"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_top">
+
+                <TextView
+                        android:id="@+id/alipay_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/dp_21"
+                        android:text="姓名"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_15"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/alipay_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/dp_21"
+                        android:text="支付宝帐号"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintTop_toBottomOf="@+id/alipay_name"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/tv_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@null"
+                        android:hint="请输入真实姓名"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        app:layout_constraintBottom_toBottomOf="@+id/alipay_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/alipay_account"
+                        app:layout_constraintTop_toTopOf="@+id/alipay_name"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/tv_account"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@null"
+                        android:hint="请输入支付宝帐号"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        app:layout_constraintBottom_toBottomOf="@+id/alipay_account"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/alipay_account"
+                        app:layout_constraintTop_toTopOf="@+id/alipay_account"
+                        tools:ignore="HardcodedText"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+                android:id="@+id/confirm"
+                click="@{v}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginStart="@dimen/dp_33"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="@dimen/dp_33"
+                android:background="@drawable/start_end_ground_bg"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="#FEF5E7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl"
+                tools:ignore="HardcodedText"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

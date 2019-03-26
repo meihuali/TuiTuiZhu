@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-24 下午10:02
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.SendJellyBeanActivity"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.activity.SendJellyBeanActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/rectangle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/xgzh_bg">
+
+                <TextView
+                        android:id="@+id/alipay_input_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_30"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:text="输入对方的信息"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_20"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="HardcodedText"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_top">
+
+                <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/dp_21"
+                        android:text="手机号"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_15"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/alipay_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/dp_21"
+                        android:text="金额"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintTop_toBottomOf="@+id/et_phone"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:hint="请输入对方手机号码"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_phone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_phone"
+                        app:layout_constraintTop_toTopOf="@+id/tv_phone"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/et_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:hint="请输入赠送的金额"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        app:layout_constraintBottom_toBottomOf="@+id/alipay_account"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_phone"
+                        app:layout_constraintTop_toTopOf="@+id/alipay_account"
+                        tools:ignore="HardcodedText"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+                android:id="@+id/confirm"
+                click="@{v}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginStart="@dimen/dp_33"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="@dimen/dp_33"
+                android:background="@drawable/start_end_ground_bg"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="#FEF5E7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl"
+                tools:ignore="HardcodedText"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

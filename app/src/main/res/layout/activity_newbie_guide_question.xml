@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/12/18 9:58 AM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+    <data>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.NewbieGuideQuestionModel.Data.Result"/>
+
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="15dp"
+            tools:context=".ui.activity.guide.NewbieGuideQuestionActivity">
+
+        <TextView
+                android:layout_width="wrap_content"
+                tools:text="如何发布活动？"
+                android:textStyle="bold"
+                android:text="@{m.questionStr}"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:text="@{m.answerStr}"
+                tools:text="答：什么原因什么原因什么原因什么原因什么原因什么原 因什么原因什么原因什么原因什么原因"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/23/18 3:36 AM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.PublishTaskModel" />
+
+        <variable
+            name="v"
+            type="com.designer.library.base.BaseActivity" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/divider_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:showDividers="middle"
+                tools:context=".ui.activity.publish.PublishTaskAdvanceOptionActivity">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是否需要审核"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:button="@null"
+                            android:checked="@={m.performCheck}"
+                            android:drawableLeft="@drawable/selector_checkbox_20dp"
+                            android:drawablePadding="8dp"
+                            android:text="是"
+                            android:textColor="@color/textDescription"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_perform_check_n"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginLeft="78dp"
+                            android:button="@null"
+                            android:checked="@={!m.performCheck}"
+                            android:drawableLeft="@drawable/selector_checkbox_20dp"
+                            android:drawablePadding="8dp"
+                            android:text="否"
+                            android:textColor="@color/textDescription"
+                            android:textSize="12dp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是否需要用户提交审核凭证"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:button="@null"
+                            android:checked="@={m.requireUserUpdateCertification}"
+                            android:drawableLeft="@drawable/selector_checkbox_20dp"
+                            android:drawablePadding="8dp"
+                            android:text="是"
+                            android:textColor="@color/textDescription"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_require_user_update_certification_n"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginLeft="78dp"
+                            android:button="@null"
+                            android:checked="@={!m.requireUserUpdateCertification}"
+                            android:drawableLeft="@drawable/selector_checkbox_20dp"
+                            android:drawablePadding="8dp"
+                            android:text="否"
+                            android:textColor="@color/textDescription"
+                            android:textSize="12dp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    gone="@{m.publishLevelVisible}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发布任务级别"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:button="@null"
+                            android:checked="@={m.bronzeChecked}"
+                            android:drawableLeft="@drawable/selector_checkbox_20dp"
+                            android:drawablePadding="8dp"
+                            android:text="青铜"
+                            android:textColor="@color/textDescription"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginLeft="78dp"
+                            android:button="@null"
+                            android:checked="@={m.silverChecked}"
+                            android:drawableLeft="@drawable/selector_checkbox_20dp"
+                            android:drawablePadding="8dp"
+                            android:text="白银"
+                            android:textColor="@color/textDescription"
+                            android:textSize="12dp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_goods_award"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是否有实物奖励"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/rb_goods_award_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="15dp"
+                        android:button="@null"
+                        android:checked="@={m.hasGoodsAward}"
+                        android:drawableLeft="@drawable/selector_checkbox_20dp"
+                        android:drawablePadding="8dp"
+                        android:text="是"
+                        android:textColor="@color/textDescription"
+                        android:textSize="12dp"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/rb_goods_award_n"
+                        app:layout_constraintTop_toBottomOf="@id/tv" />
+
+                    <CheckBox
+                        android:id="@+id/rb_goods_award_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="78dp"
+                        android:button="@null"
+                        android:checked="@={!m.hasGoodsAward}"
+                        android:drawableLeft="@drawable/selector_checkbox_20dp"
+                        android:drawablePadding="8dp"
+                        android:text="否"
+                        android:textColor="@color/textDescription"
+                        android:textSize="12dp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/rb_goods_award_y"
+                        app:layout_constraintLeft_toRightOf="@id/rb_goods_award_y"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="实体物品"
+                        android:textSize="12dp"
+                        app:layout_constraintLeft_toLeftOf="@id/rb_goods_award_y"
+                        app:layout_constraintTop_toBottomOf="@id/rb_goods_award_y" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{m.hasGoodsAward?View.VISIBLE : View.GONE}"
+                        app:constraint_referenced_ids="tv1,tv2,et,et1" />
+
+                    <EditText
+                        android:id="@+id/et"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入实体物品名称"
+                        android:singleLine="true"
+                        android:text="@={m.objName}"
+                        android:textSize="12dp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+                        app:layout_constraintLeft_toRightOf="@id/tv1"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:text="实物参考价 "
+                        android:textSize="12dp"
+                        app:layout_constraintLeft_toLeftOf="@id/tv1"
+                        app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                    <EditText
+                        android:id="@+id/et1"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入实物参考价格"
+                        android:text="@={m.goodsPrice}"
+                        android:maxLength="15"
+                        android:textSize="12dp"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv2"
+                        app:layout_constraintLeft_toRightOf="@id/tv2"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="添加链接"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_task_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/bg_ad_content_link"
+                        android:hint="请输入链接"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text="@={m.explicitLink}"
+                        android:textColorLink="@color/colorAccent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:background="@drawable/shadow_accent" />
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        click="@{v}"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/btn_accent"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:text="完成"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

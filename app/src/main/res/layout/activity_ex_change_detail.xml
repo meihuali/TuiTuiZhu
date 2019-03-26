@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TuiTuiPig1.1
+  ~ Author：马靖乘
+  ~ Date：18-11-28 下午3:39
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="v"
+            type="com.tonghechuanmei.android.ui.activity.otherserver.ExChangeDetailActivity" />
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.ProductSearchDetailModel.Data" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.activity.otherserver.ExChangeDetailActivity">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/ex_change_ll">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner_ex_change"
+                    banner="@{m.photoAlbum}"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:image_scale_type="center_crop"
+                    app:layout_constraintDimensionRatio="1:1" />
+
+                <com.designer.library.widget.DifferentSizeTextView
+                    android:id="@+id/empirical_tv"
+                    beanPrice="@{m.beanPrice}"
+                    otherRmb="@{m.price}"
+                    sort="@{m.sort}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_13"
+                    android:textColor="@color/textRed"
+                    app:lastColor="@color/textRed"
+                    app:lastSize="@dimen/sp_14"
+                    app:lastText=".00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/banner_ex_change"
+                    app:leftColor="@color/textRed"
+                    app:leftSize="@dimen/sp_14"
+                    app:leftText=""
+                    app:rightColor="@color/textRed"
+                    app:rightSize="@dimen/sp_35"
+                    app:rightText="0" />
+
+                <TextView
+                        android:id="@+id/tv_mark_price"
+                        addMiddleLine="@{m.isAddMiddleLine}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:textColor="@color/textDescription"
+                        android:text="@{m.deletePrice}"
+                        app:layout_constraintBottom_toBottomOf="@+id/empirical_tv"
+                        app:layout_constraintStart_toEndOf="@+id/empirical_tv"
+                        tools:ignore="HardcodedText"
+                        tools:text="1299.00" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:text="@{m.name}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/empirical_tv"
+                    tools:text="慕斯磨毛手工火烈鸟抱枕" />
+
+                <TextView
+                    android:id="@+id/tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@{m.intro}"
+                    android:textColor="@color/textDescription"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    tools:text="十字甜品" />
+
+                <FrameLayout
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:background="@color/divider"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_detail" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:drawableStart="@drawable/buy_left"
+                    android:drawableEnd="@drawable/buy_right"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:text="图文详情"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line"
+                    tools:ignore="HardcodedText" />
+
+                <WebView
+                    android:id="@+id/shop_detail_wv"
+                    loadUrl="@{m.detail}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    tools:ignore="WebViewLayout" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ex_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/shop_detail_wv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/action_back"
+                style="@style/ToolbarButton"
+                click="@{v}"
+                android:scaleType="center"
+                android:src="@drawable/ic_action_back" />
+
+            <!--<ImageView
+                android:id="@+id/tv_edit"
+                click="@{v}"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:gravity="center|end"
+                android:paddingRight="@dimen/dp_15"
+                android:scaleType="center"
+                android:src="@drawable/icon_enjoy"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="HardcodedText" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ex_change_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_ex_change_price"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{m.detailPayPrice}"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                tools:text="1000糖豆" />
+
+            <TextView
+                android:id="@+id/confirm"
+                click="@{v}"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/start_end_bg"
+                android:gravity="center"
+                android:text="立即兑换"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/9/18 9:54 PM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.designer.library.base.BaseDialogFragment"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.dialog.NewbieGiftDialog">
+
+        <ImageView
+                android:src="@drawable/bg_newbie_gift"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/iv"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/iv1"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="wrap_content"/>
+
+        <ImageView
+                android:src="@drawable/bg_newbie_gift_1"
+                android:layout_width="wrap_content"
+                android:id="@+id/iv1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="wrap_content"/>
+
+
+        <ImageView
+                app:layout_constraintTop_toBottomOf="@id/iv1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="12dp"
+                android:id="@+id/iv_close"
+                click="@{v}"
+                android:layout_width="32dp"
+                android:src="@drawable/ic_close"
+                android:layout_height="32dp"/>
+
+        <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="70dp"
+                android:textStyle="bold"
+                android:text="领取"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:textColor="@color/white"
+                click="@{v}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv"
+                android:background="@drawable/btn_accent_second_rounded_4dp"
+                android:layout_height="32dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

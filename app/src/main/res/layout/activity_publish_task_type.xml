@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/23/18 3:33 AM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.designer.library.component.state.StateLayout
+        android:layout_width="match_parent"
+        android:id="@+id/state_task_type"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_task_type"
+            android:paddingTop="15dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.designer.library.component.state.StateLayout>
+
+</layout>

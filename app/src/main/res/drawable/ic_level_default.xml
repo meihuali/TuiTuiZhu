@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：12/1/18 8:10 PM
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white"/>
+    <size
+            android:height="24dp"
+            android:width="24dp"/>
+</shape>

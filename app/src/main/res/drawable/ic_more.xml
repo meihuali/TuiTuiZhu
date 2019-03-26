@@ -1,0 +1,19 @@
+<!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/10/18 10:02 AM
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="14dp"
+        android:viewportHeight="14"
+        android:viewportWidth="14"
+    android:width="14dp">
+    <path
+            android:fillColor="#B9B9B9"
+            android:fillType="nonZero"
+            android:pathData="M8.714,7L3.4107,1.6967C3.0853,1.3713 3.0853,0.8436 3.4107,0.5182C3.7362,0.1928 4.2638,0.1928 4.5893,0.5182L10.1872,6.1161C10.6753,6.6043 10.6753,7.3957 10.1872,7.8839L4.5893,13.4818C4.2638,13.8072 3.7362,13.8072 3.4107,13.4818C3.0853,13.1564 3.0853,12.6287 3.4107,12.3033L8.714,7Z"
+            android:strokeColor="#00000000"
+            android:strokeWidth="1"/>
+</vector>

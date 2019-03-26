@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.ApplyStateListModel.Data.Result" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_shadow"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                img="@{m.headImg}"
+                placeHolder="@{@drawable/ic_normal_bg}"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:maxLines="2"
+                android:text="@{m.taskName}"
+                android:textColor="@color/textColor"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_apply_person_count"
+                app:layout_constraintLeft_toRightOf="@id/iv_image"
+                app:layout_constraintRight_toLeftOf="@id/tv_apply_status"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="鲜奶制作冰淇淋制作简单 包学会" />
+
+            <TextView
+                android:id="@+id/tv_apply_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@{m.getStateStr}"
+                android:textColor="@color/textRed"
+                android:textSize="12dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_title"
+                app:layout_constraintLeft_toRightOf="@id/tv_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="未通过" />
+
+            <TextView
+                android:id="@+id/tv_apply_person_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{m.getSignedNumber}"
+                android:textColor="@color/textColor"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_award"
+                app:layout_constraintLeft_toLeftOf="@id/tv_title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                tools:text="已有237人报名" />
+
+            <TextView
+                    android:id="@+id/tv_award"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{m.awardTv}"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_title"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_apply_person_count"
+                    tools:text="奖励: 第三方 Jar 包可以放在 Nexus 上，项目可以直接通过 Url 和路径配置直接引用。方便进行统一管理。同时有多个项目在开发的时候，一些共用基础模块可以单独抽取到 Nexus 上，需要用的项目直接从"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/divider_horizontal" />
+
+        <TextView
+            android:id="@+id/item_apply_remark"
+            gone="@{m.showRemark}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{m.getTextRemark()}"
+            android:textSize="12dp"
+            tools:text="原因: 该任务已放弃发布" />
+
+        <LinearLayout
+            android:layout_gravity="right"
+            android:id="@+id/item_my_apply_btn_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/item_my_apply_cancel_btn"
+                android:layout_width="72dp"
+                android:layout_height="26dp"
+                android:background="@drawable/task_publish_gray_bg"
+                android:gravity="center"
+                android:text="@{m.getCancelBtnStr}"
+                android:textColor="@color/textDescription"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/item_my_apply_sure_btn"
+                gone="@{m.getBtnGone}"
+                android:layout_width="72dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/task_publish_orange_bg"
+                android:gravity="center"
+                android:text="@{m.getBtnStr}"
+                android:textColor="@color/orange_color"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/25/18 1:57 PM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.ProvinceModel.Data"/>
+    </data>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/item"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            tools:text="湖南省"
+            android:text="@{m.name}"
+            selected="@{m.selected}"
+            android:gravity="center"
+            android:foreground="?selectableItemBackground"
+            android:textColor="@drawable/selector_accent_black_text_color"
+            android:background="@color/white"
+            android:minWidth="120dp"
+            android:layout_height="50dp"/>
+</layout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.activity.task.SearchTaskActivity">
+
+        <LinearLayout
+                android:id="@+id/toolbar"
+                android:paddingLeft="14dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+            <EditText
+                    android:id="@+id/et_search"
+                    android:drawableLeft="@drawable/ic_search_edit"
+                    android:layout_width="0dp"
+                    android:drawablePadding="8dp"
+                    android:layout_height="36dp"
+                    android:singleLine="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input_search"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:transitionName="search_edit"
+                    android:paddingRight="8dp"
+                    android:hint="查找喜欢的活动"/>
+
+            <TextView
+                    android:text="取消"
+                    android:layout_width="60dp"
+                    android:gravity="center"
+                    finish="@{true}"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <com.designer.library.component.recycler.PageRefreshLayout
+                android:id="@+id/refresh"
+                android:background="@color/windowBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:paddingTop="10dp"
+                    android:clipToPadding="false"
+                    android:id="@+id/rv_search_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </com.designer.library.component.recycler.PageRefreshLayout>
+
+    </LinearLayout>
+</layout>

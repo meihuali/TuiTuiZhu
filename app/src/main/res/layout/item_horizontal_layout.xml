@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TTZ
+  ~ Author：马靖乘
+  ~ Date：18-12-11 下午1:03
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="227dp"
+              android:orientation="vertical">
+
+    <ImageView
+            android:id="@+id/iv_item_vip"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent"/>
+</LinearLayout>

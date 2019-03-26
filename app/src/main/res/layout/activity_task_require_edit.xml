@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/29/18 4:08 PM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.designer.library.base.BaseActivity"/>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.PublishTaskModel"/>
+
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+        tools:context=".ui.activity.publish.TaskRequireEditActivity">
+
+        <FrameLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp">
+
+            <ImageView
+                    style="@style/ToolbarButton"
+                    finish="@{true}"
+                    android:src="@drawable/ic_action_back"/>
+
+            <TextView
+                    style="@style/ToolbarTitle"
+                    android:text="活动要求"/>
+
+            <TextView
+                    android:id="@+id/tv_save"
+                    click="@{v}"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|center_vertical"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:text="保存"/>
+
+        </FrameLayout>
+
+        <EditText
+                android:id="@+id/et_task_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="请输入您对活动的转发要求"
+                android:padding="15dp"
+                android:text="@={m.requirements}"/>
+
+    </LinearLayout>
+</layout>

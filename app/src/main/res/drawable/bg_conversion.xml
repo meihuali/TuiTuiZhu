@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TuiTuiPig
+  ~ Author：马靖乘
+  ~ Date：18-12-25 下午3:14
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#DBDBDA"/>
+    <corners android:radius="@dimen/dp_8"/>
+</shape>

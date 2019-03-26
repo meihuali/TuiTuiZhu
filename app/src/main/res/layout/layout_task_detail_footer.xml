@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="v"
+            type="com.tonghechuanmei.android.ui.activity.task.TaskDetailActivity" />
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.TaskDetailModel.Data" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/white"
+        android:paddingBottom="60dp"
+        android:orientation="vertical"
+        tools:context=".ui.activity.task.TaskDetailActivity"
+        tools:ignore="WebViewLayout">
+
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            gone="@{m}"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/web_url"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="@{m.explicitLinkStr}"
+                android:textColor="@color/textColor"
+                android:textSize="12dp"
+                tools:text="https://lanhuapp.com/web/#/item/board/detail/item/board/detail/item/board/detail" />
+
+            <TextView
+                android:id="@+id/copy"
+                click="@{v}"
+                android:textSize="12dp"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击复制"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

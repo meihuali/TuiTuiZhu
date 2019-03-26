@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-18 下午4:22
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.UserAuthActivity"/>
+
+        <variable
+                name="m"
+                type="Boolean"/>
+
+        <variable
+                name="model"
+                type="com.tonghechuanmei.android.model.UserMsgModel.Data.Result"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_confirm"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <FrameLayout
+                        android:id="@+id/line"
+                        style="@style/line_style"/>
+
+                <TextView
+                        android:id="@+id/user_auth_name"
+                        style="@style/text_left_style"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:text="姓名："
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/user_input_et"
+                        gone="@{!m}"
+                        android:layout_width="274dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:background="@null"
+                        android:hint="输入真实姓名"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/user_input_tv"
+                        gone="@{m}"
+                        android:layout_width="274dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:hint=""
+                        android:text="@{model.realName}"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line1"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_auth_name"/>
+
+                <!--    <TextView
+                            android:id="@+id/gender_name"
+                            style="@style/text_left_style"
+                            android:layout_height="@dimen/dp_44"
+                            android:layout_marginStart="@dimen/dp_15"
+                            android:text="性别："
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/line1"
+                            tools:ignore="HardcodedText"/>
+
+                    <RadioGroup
+                            android:id="@+id/user_auth_rg"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_44"
+                            android:layout_marginStart="@dimen/dp_15"
+                            android:orientation="horizontal"
+                            app:layout_constraintStart_toEndOf="@+id/identity_name"
+                            app:layout_constraintTop_toBottomOf="@+id/user_auth_name">
+
+                        <RadioButton
+                                android:id="@+id/rb_left_rb"
+                                android:layout_width="@dimen/dp_45"
+                                android:layout_height="@dimen/dp_44"
+                                android:button="@null"
+                                android:checked="true"
+                                android:drawableStart="@drawable/gender_select_bg"
+                                android:drawablePadding="@dimen/dp_5"
+                                android:gravity="center"
+                                android:text="男"
+                                tools:ignore="HardcodedText"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_right_rb"
+                                android:layout_width="@dimen/dp_45"
+                                android:layout_height="@dimen/dp_44"
+                                android:layout_marginStart="@dimen/dp_52"
+                                android:button="@null"
+                                android:drawableStart="@drawable/gender_select_bg"
+                                android:drawablePadding="@dimen/dp_5"
+                                android:gravity="center"
+                                android:text="女"
+                                tools:ignore="HardcodedText"/>
+                    </RadioGroup>
+
+                    <FrameLayout
+                            android:id="@+id/line2"
+                            style="@style/line_style"
+                            app:layout_constraintBottom_toBottomOf="@+id/user_auth_rg"/>-->
+
+                <TextView
+                        android:id="@+id/identity_name"
+                        style="@style/text_left_style"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:text="身份证："
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line1"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/et_identity"
+                        gone="@{!m}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:background="@null"
+                        android:hint="输入与姓名相符的身份证号"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/identity_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/tv_identity"
+                        gone="@{m}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:hint=""
+                        android:text="@{model.idCard}"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/identity_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line3"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/identity_name"/>
+                <!--生日-->
+                <!--  <TextView
+                          android:id="@+id/birthday_name"
+                          style="@style/text_left_style"
+                          android:layout_height="@dimen/dp_44"
+                          android:layout_marginStart="@dimen/dp_15"
+                          android:text="生日："
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toBottomOf="@+id/line3"
+                          tools:ignore="HardcodedText"/>
+
+                  <TextView
+                          android:id="@+id/tv_birthday"
+                          click="@{v}"
+                          android:layout_width="0dp"
+                          android:layout_height="@dimen/dp_44"
+                          android:layout_marginStart="@dimen/dp_15"
+                          android:layout_marginEnd="@dimen/dp_15"
+                          android:gravity="center_vertical"
+                          android:hint="填写有惊喜"
+                          android:text="@{model.birthday}"
+                          android:textColor="@color/textColor"
+                          android:textColorHint="@color/textDescription"
+                          android:textSize="@dimen/sp_14"
+                          app:layout_constraintBottom_toBottomOf="@+id/birthday_name"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toEndOf="@+id/identity_name"
+                          tools:ignore="HardcodedText"/>
+
+                  <FrameLayout
+                          android:id="@+id/line4"
+                          style="@style/line_style"
+                          app:layout_constraintBottom_toBottomOf="@+id/birthday_name"/>-->
+
+                <!--手机号-->
+                <TextView
+                        android:id="@+id/tv_phone_name"
+                        style="@style/text_left_style"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:text="手机号："
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line3"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/et_phone"
+                        gone="@{!m}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:background="@null"
+                        android:hint="请确保手机号码是真实可用"
+                        android:inputType="number"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_phone_name"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_get_code"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText,TextFields"/>
+
+                <TextView
+                        android:id="@+id/tv_phone"
+                        gone="@{m}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:hint=""
+                        android:text="@{model.phone}"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_phone_name"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_get_code"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/tv_get_code"
+                        click="@{v}"
+                        gone="@{!m}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_26"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:background="@drawable/get_code_bg"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dp_5"
+                        android:paddingEnd="@dimen/dp_5"
+                        android:text="获取验证码"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_11"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_phone_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_phone_name"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line5"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_phone_name"/>
+
+                <!--验证码-->
+                <TextView
+                        android:id="@+id/tv_code"
+                        style="@style/text_left_style"
+                        gone="@{!m}"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:text="验证码："
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line5"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/et_code"
+                        gone="@{!m}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:background="@null"
+                        android:hint="输入验证码"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_code"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText"/>
+
+
+                <TextView
+                        android:id="@+id/tv_code1"
+                        gone="@{m}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_44"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:hint=""
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_code"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/identity_name"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line6"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_code"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+                android:id="@+id/tv_confirm"
+                click="@{v}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_49"
+                android:background="@drawable/start_end_bg"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="HardcodedText"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

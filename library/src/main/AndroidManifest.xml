@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,银人网络科技（长沙）有限公司 All rights reserved.
+  ~ Project：YiFuKeCheng
+  ~ Author：设计师吴彦祖
+  ~ Date：18-4-12 下午11:33
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.designer.library">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

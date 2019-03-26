@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TTPig
+  ~ Author：马靖乘
+  ~ Date：18-11-30 下午1:14
+  -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:layout_width="275dp"
+                                   android:layout_height="280dp"
+                                   app:cardCornerRadius="10dp"
+                                   app:cardElevation="0dp"
+                                   tools:ignore="MissingDefaultResource">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="275dp"
+            android:layout_height="275dp"
+            android:background="@color/white">
+
+        <TextView
+                android:text="恭喜兑换成功"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="31dp"
+                android:drawableTop="@drawable/dhcg"
+                app:layout_constraintBottom_toTopOf="@+id/btn"
+                android:layout_width="wrap_content"
+                android:drawablePadding="20dp"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText"/>
+
+        <TextView
+                android:id="@+id/btn"
+                android:layout_width="145dp"
+                android:layout_height="38dp"
+                android:layout_marginBottom="21dp"
+                android:background="@drawable/task_details_background"
+                android:gravity="center"
+                android:text="我知道了"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

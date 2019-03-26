@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">推推猪</string>
+    <string name="money_package">零钱(元)</string>
+
+    <string name="please_choice">请选择</string>
+    <string name="home_icon_fb">活动发布</string>
+    <string name="home_icon_fl">福利</string>
+    <string name="home_icon_xszn">新手指南</string>
+    <string name="home_icon_rwdt">活动大厅</string>
+    <string name="home_icon_wdrw">我的活动</string>
+    <string name="home_icon_hyzx">会员中心</string>
+    <string name="home_icon_phb">排行榜</string>
+    <string name="home_icon_gxsg">共享时光</string>
+    <string name="home_icon_hfcz">充值中心</string>
+    <string name="home_icon_dhzx">兑换中心</string>
+    <string name="time_count_down_tip">(%1$ds)</string>
+    <string name="launch_time_count_down_tip">%1$d</string>
+    <string name="phone_no_empty">手机号不能为空</string>
+    <string name="phone_error">非法手机号</string>
+
+    <string name="send_success">发送成功</string>
+    <string name="identity_no_empty">身份证号不能为空</string>
+    <string name="name_no_empty">姓名不能为空</string>
+    <string name="code_no_empty">验证码不能为空</string>
+    <string name="no_auth">尚未进行实名认证，请先前往认证</string>
+    <string name="no_bind">尚未绑定帐户，立即前往绑定</string>
+    <string name="wait_auth">认证尚在审核中，请耐心等待</string>
+    <string name="fail_auth">认证审核失败，请修改认证信息重新认证</string>
+    <string name="go_to_auth">去认证</string>
+    <string name="again_auth">重新认证</string>
+    <string name="add_account">添加帐户</string>
+    <string name="money_no_empty">提现金额不能为空</string>
+    <string name="confirm">确认</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-14 上午10:13
+  -->
+
+<resources>
+    <string name="left_text">左边文字</string>
+    <string name="right_text">右边文字</string>
+    <string name="last_text">最后文字</string>
+</resources>

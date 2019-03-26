@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-14 上午10:34
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.MoneyPackageActivity"/>
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/empirical_cl"
+                    android:layout_width="match_parent"
+                    android:layout_height="119dp"
+                    android:background="@drawable/bg_jyz_bg">
+
+                <com.designer.library.widget.DifferentSizeTextView
+                        android:id="@+id/empirical_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_30"
+                        android:textColor="@color/white"
+                        app:lastColor="@color/white"
+                        app:lastSize="@dimen/sp_14"
+                        app:lastText=".00"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:leftColor="@color/white"
+                        app:leftSize="@dimen/sp_14"
+                        app:leftText=""
+                        app:rightColor="@color/white"
+                        app:rightSize="@dimen/sp_35"
+                        app:rightText="0"/>
+
+                <TextView
+                        android:id="@+id/empirical_bottom_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/money_package"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/empirical_tv"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                    android:id="@+id/money_left_tv"
+                    click="@{v}"
+                    android:layout_width="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:background="@drawable/money_bg"
+                    android:gravity="center"
+                    android:text="提现"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/empirical_cl"
+                    tools:ignore="HardcodedText"/>
+            <!--
+                        <TextView
+                            android:id="@+id/money_right_tv"
+                            click="@{v}"
+                            android:layout_width="160dp"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="@dimen/dp_18"
+                            android:layout_marginEnd="@dimen/dp_15"
+                            android:background="@drawable/money_bg"
+                            android:gravity="center"
+                            android:text="兑换"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/empirical_cl"
+                            tools:ignore="HardcodedText" />-->
+
+            <TextView
+                    android:id="@+id/empirical_exchange_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:text="钱包记录"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/money_left_tv"
+                    tools:ignore="HardcodedText"/>
+
+            <ImageView
+                    android:id="@+id/empirical_iv"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/empirical_exchange_record_bg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/empirical_exchange_record"/>
+
+            <TextView
+                    android:id="@+id/empirical_left_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="活动标题/时间"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintStart_toStartOf="@+id/empirical_iv"
+                    app:layout_constraintTop_toBottomOf="@+id/empirical_iv"
+                    tools:ignore="HardcodedText"/>
+
+            <TextView
+                    android:id="@+id/empirical_right_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="15dp"
+                    android:text="奖励"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/empirical_iv"
+                    tools:ignore="HardcodedText"/>
+
+            <FrameLayout
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:background="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/empirical_right_tv"/>
+
+            <com.designer.library.component.recycler.PageRefreshLayout
+                    android:id="@+id/refreshLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/money_package_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+            </com.designer.library.component.recycler.PageRefreshLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

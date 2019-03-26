@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.NewbieGuideTaskModel.Data.Result"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+        <TextView
+                android:id="@+id/tv_task_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{m.title}"
+                android:layout_marginRight="8dp"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@id/guide_task_content"
+                tools:text="完成用户认证一次"
+                app:layout_constraintRight_toLeftOf="@id/btn_complete"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/guide_task_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                tools:text="完成用户认证，上传已通过的用户认证界面"
+                android:text="@{m.detial}"
+                android:textColor="@color/textDescription"
+                android:textSize="12dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toLeftOf="@id/btn_complete"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tv_award"
+                app:layout_constraintTop_toBottomOf="@id/tv_task_name"/>
+
+        <TextView
+                android:id="@+id/tv_award"
+                app:layout_constraintTop_toBottomOf="@id/guide_task_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                tools:text="+ 50.00个奖励"
+                android:textColor="@color/colorAccent"
+                android:text="@{m.awardNameStr}"
+                android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_complete"
+                android:layout_width="70dp"
+                enable="@{m.btnEnable}"
+                android:layout_height="40dp"
+                app:backgroundTint="@{m.btnBackground}"
+                android:gravity="center"
+                android:text="@{m.btnStr}"
+                app:cornerRadius="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="去完成"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:textColor="@drawable/selector_white_gray_text_color"
+                android:textSize="12dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

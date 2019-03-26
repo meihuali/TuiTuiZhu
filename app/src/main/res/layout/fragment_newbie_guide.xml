@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/12/18 10:01 AM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+    <com.designer.library.component.state.StateLayout
+            android:layout_width="match_parent"
+            android:id="@+id/container"
+            android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_newbie_guide"
+                android:background="@drawable/bg_newbie_guide_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+    </com.designer.library.component.state.StateLayout>
+
+
+</layout>

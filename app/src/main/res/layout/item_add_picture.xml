@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/24/18 10:41 AM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+                name="m"
+                type="String"/>
+
+        <variable
+                name="v"
+                type="com.designer.library.base.BaseActivity"/>
+
+    </data>
+
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+
+        <FrameLayout
+                android:id="@+id/ll_add_picture"
+                click="@{v}"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_add_picture"
+                    android:id="@+id/iv_add_picture"
+                    android:background="@color/windowBackground"
+                    android:scaleType="center"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+
+            <ImageView
+                    img="@{m}"
+                    android:layout_gravity="center_horizontal"
+                    placeHolder="@{@color/windowBackground}"
+                    android:id="@+id/iv_preview_picture"
+                    android:background="@color/windowBackground"
+                    android:scaleType="centerCrop"
+                    gone="@{m}"
+                    android:visibility="gone"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+
+            <ImageView
+                    android:id="@+id/iv_delete"
+                    gone="@{m}"
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ic_delete_img"
+                    android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>

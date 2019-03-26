@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.tonghechuanmei.android.model.TaskStatisticsModel.Data"/>
+
+        <variable
+                name="click"
+                type="com.tonghechuanmei.android.ui.activity.MyTaskActivity"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/my_task_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <ImageView
+                android:id="@+id/my_task_iv1"
+                click="@{click}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/task_fb"
+                app:layout_constraintBottom_toTopOf="@id/my_task_iv2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/task_fb_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="@{bean.publishTaskCount}"
+                android:textColor="@color/textDescription"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/my_task_iv1"
+                app:layout_constraintEnd_toEndOf="@id/my_task_iv1"
+                app:layout_constraintStart_toStartOf="@id/my_task_iv1"/>
+
+        <ImageView
+                android:id="@+id/my_task_iv2"
+                click="@{click}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/task_bm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/my_task_iv1"/>
+
+        <TextView
+                android:id="@+id/task_bm_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="@{bean.applyTaskCount}"
+                android:textColor="@color/textDescription"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/my_task_iv2"
+                app:layout_constraintEnd_toEndOf="@id/my_task_iv1"
+                app:layout_constraintStart_toStartOf="@id/my_task_iv1"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

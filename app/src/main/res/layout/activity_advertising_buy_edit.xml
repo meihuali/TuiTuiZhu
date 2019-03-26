@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-18 上午10:46
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.AdvertisingBuyEditActivity"/>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.AdvertisingBuyModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/adv_buy_confirm"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <FrameLayout
+                        android:id="@+id/line"
+                        style="@style/line_style"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:text="活动位名称："
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_title"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_tv1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/adv_buy_tv1"
+                        tools:ignore="HardcodedText"
+                        tools:text="首页banner"/>
+
+                <FrameLayout
+                        android:id="@+id/line1"
+                        style="@style/line_style"
+                        app:layout_constraintTop_toBottomOf="@+id/adv_buy_title"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_tv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:text="每小时金额："
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line1"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line2"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_tv3"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_price"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_tv3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/adv_buy_tv1"
+                        app:layout_constraintTop_toTopOf="@+id/adv_buy_tv3"
+                        tools:ignore="HardcodedText"
+                        tools:text="¥100.00"/>
+
+                <!--开始时间-->
+                <TextView
+                        android:id="@+id/adv_buy_start_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+
+                        android:gravity="center_vertical"
+                        android:text="开始时间："
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/adv_buy_tv3"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_right_tv4"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:hint="请选择"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_start_time"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/adv_buy_start_time"
+                        app:layout_constraintTop_toTopOf="@+id/adv_buy_start_time"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line3"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_start_time"/>
+
+
+                <!--结束时间-->
+                <TextView
+                        android:id="@+id/adv_buy_end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:text="结束时间："
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/adv_buy_start_time"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_right_tv5"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:hint="请选择"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_end_time"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/adv_buy_end_time"
+                        app:layout_constraintTop_toTopOf="@+id/adv_buy_end_time"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line4"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_end_time"/>
+
+                <!--总小时-->
+                <TextView
+                        android:id="@+id/adv_buy_all_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:text="总小时："
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/adv_buy_end_time"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_all_time_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/adv_buy_all_time"
+                        app:layout_constraintTop_toTopOf="@+id/adv_buy_all_time"/>
+
+                <FrameLayout
+                        android:id="@+id/line5"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_all_time"/>
+
+                <!--活动标题-->
+                <TextView
+                        android:id="@+id/adv_buy_tv6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:text="活动标题："
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/adv_buy_all_time"
+                        tools:ignore="HardcodedText"/>
+
+                <EditText
+                        android:id="@+id/adv_buy_et6"
+                        click="@{v}"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="输入展示活动的标题"
+                        app:layout_constraintStart_toEndOf="@id/adv_buy_choice_tv"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_tv6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line6"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_tv6"/>
+
+                <!--选择活动-->
+                <TextView
+                        android:id="@+id/adv_buy_choice_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:text="选择活动："
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/adv_buy_tv6"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/adv_buy_choice"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:hint="请选择"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textDescription"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/adv_buy_choice_tv"
+                        app:layout_constraintTop_toTopOf="@+id/adv_buy_choice_tv"
+                        tools:ignore="HardcodedText"/>
+
+                <FrameLayout
+                        android:id="@+id/line7"
+                        style="@style/line_style"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_choice_tv"/>
+                <!--活动位图片-->
+                <TextView
+                        android:id="@+id/adv_buy_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_42"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:text="活动位图片"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/adv_buy_choice_tv"
+                        tools:ignore="HardcodedText"/>
+
+                <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/adv_buy_image"
+                        app:layout_constraintTop_toTopOf="@+id/adv_buy_image"
+                        tools:ignore="HardcodedText"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/adv_cl"
+                        android:layout_width="170dp"
+                        android:layout_height="141dp"
+                        click="@{v}"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:background="@color/windowBackground"
+                        app:layout_constraintStart_toEndOf="@+id/adv_buy_image"
+                        app:layout_constraintTop_toBottomOf="@+id/text">
+
+
+                    <TextView
+                            android:id="@+id/add_image_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:drawableTop="@drawable/add_pic"
+                            android:drawablePadding="@dimen/dp_14"
+                            android:textColor="@color/textDescription"
+                            android:textSize="@dimen/sp_12"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText"
+                            tools:text="点击添加100*150的图片"/>
+
+                    <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                        android:id="@+id/adv_buy_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_10"
+                        app:layout_constraintTop_toBottomOf="@+id/adv_cl"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+                android:id="@+id/adv_buy_confirm"
+                click="@{v}"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="@drawable/start_end_bg"
+                android:gravity="center"
+                android:text="确认提交"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="HardcodedText"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

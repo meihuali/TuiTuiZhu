@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/24/18 11:06 AM
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="31dp"
+        android:height="30dp"
+        android:viewportWidth="31"
+        android:viewportHeight="30">
+    <path
+            android:pathData="M1.5,14.5L29.5,14.5"
+            android:strokeWidth="1.5"
+            android:fillColor="#00000000"
+            android:strokeColor="#979797"
+            android:fillType="nonZero"
+            android:strokeLineCap="square"/>
+    <path
+            android:pathData="M15,0l1.5,0l-0,29.5l-1.5,0z"
+            android:strokeWidth="1"
+            android:fillColor="#979797"
+            android:fillType="nonZero"
+            android:strokeColor="#00000000"/>
+</vector>

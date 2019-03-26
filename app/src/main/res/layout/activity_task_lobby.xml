@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="v"
+            type="com.designer.library.base.BaseActivity" />
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.TaskFilterModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.activity.task.TaskLobbyActivity">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/ToolbarButton"
+                finish="@{true}"
+                android:scaleType="center"
+                android:src="@drawable/ic_action_back" />
+
+            <TextView
+                android:id="@+id/tv_search"
+                hit="@{true}"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_search"
+                android:drawableLeft="@drawable/ic_search_edit"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="查找喜欢的活动"
+                android:textColor="@color/textDescription">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_location"
+                click="@{v}"
+                invisible="@{m}"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:drawablePadding="4dp"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:text="杭州市" />
+
+        </LinearLayout>
+
+        <com.designer.library.component.recycler.PageRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="活动大厅"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_task_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:padding="15dp" />
+
+                        <LinearLayout
+                            invisible="@{m}"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@color/windowBackground"
+                            android:orientation="horizontal"
+                            android:visibility="invisible">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraint_comprehensive_order"
+                                click="@{v}"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:foreground="?selectableItemBackground">
+
+                                <TextView
+                                    android:id="@+id/tv_1"
+                                    selected="@{m.comprehensiiveFilter}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{m.comprehensiveFilterName}"
+                                    android:textColor="@drawable/selector_black_gray_text_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="综合排序" />
+
+                                <ImageView
+                                    selected="@{m.comprehensiiveFilter}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:src="@drawable/selector_filter_icon"
+                                    app:layout_constraintBottom_toBottomOf="@id/tv_1"
+                                    app:layout_constraintLeft_toRightOf="@id/tv_1"
+                                    app:layout_constraintTop_toTopOf="@id/tv_1" />
+
+                                <View
+                                    android:id="@+id/v1"
+                                    gone="@{m.comprehensiiveFilter}"
+                                    android:layout_width="0dp"
+                                    android:layout_height="3dp"
+                                    android:background="@color/black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="@id/tv_1"
+                                    app:layout_constraintRight_toRightOf="@id/tv_1" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraint_type_order"
+                                click="@{v}"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:foreground="?selectableItemBackground">
+
+                                <TextView
+                                    android:id="@+id/tv_2"
+                                    selected="@{m.typeFilter}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{m.typeFilterName}"
+                                    android:textColor="@drawable/selector_black_gray_text_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="类型" />
+
+                                <ImageView
+                                    selected="@{m.typeFilter}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:src="@drawable/selector_filter_icon"
+                                    app:layout_constraintBottom_toBottomOf="@id/tv_2"
+                                    app:layout_constraintLeft_toRightOf="@id/tv_2"
+                                    app:layout_constraintTop_toTopOf="@id/tv_2" />
+
+                                <View
+                                    android:id="@+id/v2"
+                                    gone="@{m.typeFilter}"
+                                    android:layout_width="0dp"
+                                    android:layout_height="3dp"
+                                    android:background="@color/black"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="@id/tv_2"
+                                    app:layout_constraintRight_toRightOf="@id/tv_2" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraint_area"
+                                click="@{v}"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:foreground="?selectableItemBackground">
+
+                                <TextView
+                                    android:id="@+id/tv_3"
+                                    selected="@{m.regionFilter}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{m.regionFilterName}"
+                                    android:textColor="@drawable/selector_black_gray_text_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:text="区域" />
+
+                                <ImageView
+                                    selected="@{m.regionFilter}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:src="@drawable/selector_filter_icon"
+                                    app:layout_constraintBottom_toBottomOf="@id/tv_3"
+                                    app:layout_constraintLeft_toRightOf="@id/tv_3"
+                                    app:layout_constraintTop_toTopOf="@id/tv_3" />
+
+                                <View
+                                    android:id="@+id/v3"
+                                    gone="@{m.regionFilter}"
+                                    android:layout_width="0dp"
+                                    android:layout_height="3dp"
+                                    android:background="@color/black"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="@id/tv_3"
+                                    app:layout_constraintRight_toRightOf="@id/tv_3" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="@color/windowBackground" />
+
+                    </LinearLayout>
+
+                    <com.designer.library.component.state.StateLayout
+                        android:id="@+id/state_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_task_lobby"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/windowBackground"
+                            android:nestedScrollingEnabled="true" />
+
+                    </com.designer.library.component.state.StateLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.designer.library.component.recycler.PageRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

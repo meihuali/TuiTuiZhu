@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.designer.library.base.BaseActivity"/>
+    </data>
+
+    <com.designer.library.component.recycler.PageRefreshLayout
+            android:id="@+id/pl_recharge_record"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/windowBackground"
+            tools:context=".ui.activity.recharge.RechargeRecordActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recharge_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_recharge_record"/>
+
+    </com.designer.library.component.recycler.PageRefreshLayout>
+</layout>

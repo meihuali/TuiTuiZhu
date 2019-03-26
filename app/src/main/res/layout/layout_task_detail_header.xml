@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/20/18 11:55 PM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.TaskDetailModel.Data" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        tools:context=".ui.activity.task.TaskDetailActivity">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@{m.name}"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            tools:text="你离大神只有一步之遥, 你离大神只有一步之遥" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_task_detail_apply_person_count"
+                android:drawablePadding="8dp"
+                android:text="@{m.signNumberStr}"
+                app:layout_constraintLeft_toRightOf="@id/iv"
+                app:layout_constraintTop_toTopOf="@id/iv"
+                tools:text="报名人数：20              剩余18" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawableLeft="@drawable/ic_task_detail_award"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@{m.awardTv}"
+                    app:layout_constraintLeft_toRightOf="@id/iv"
+                    app:layout_constraintTop_toTopOf="@id/iv"
+                    tools:text="悬赏：酱酱酱酱酱酱酱酱酱酱酱酱酱酱酱酱酱酱酱 酱酱酱酱酱酱酱酱酱酱酱。"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableLeft="@drawable/ic_task_detail_address"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@{m.address}"
+                app:layout_constraintLeft_toRightOf="@id/iv"
+                app:layout_constraintTop_toTopOf="@id/iv"
+                tools:text="地址：浙江省杭州市西湖区云溪小镇中大" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/windowBackground" />
+
+        <TextView
+            gone="@{m.content != null}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@{m.content}"
+            tools:text="KFC新品红色鼓励桶火热上市，各大门店有售，优惠多多，快来尝鲜！" />
+
+    </LinearLayout>
+</layout>

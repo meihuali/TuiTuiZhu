@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TuiTuiPig
+  ~ Author：马靖乘
+  ~ Date：18-12-25 下午3:03
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="v"
+            type="com.tonghechuanmei.android.ui.dialog.ConversionDialog" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/ll_conversion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="输入兑换码"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"
+                android:textSize="16dp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/et_conversion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/bg_edit"
+                android:hint="请输入兑换码（每条兑换码只能兑换一次）"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                click="@{v}"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/bg_conversion"
+                android:gravity="center"
+                android:text="确认兑换"
+                android:textColor="@color/textDescription"
+                android:textSize="@dimen/sp_15" />
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

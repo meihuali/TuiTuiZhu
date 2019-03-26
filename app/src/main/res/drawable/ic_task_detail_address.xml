@@ -1,0 +1,32 @@
+<!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/23/18 6:42 PM
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="27dp"
+    android:viewportWidth="22"
+    android:viewportHeight="27">
+    <path
+        android:pathData="M21.6241,10.901C21.6241,4.8805 16.7833,0 10.812,0C4.8407,0 0,4.8805 0,10.901C0,14.1485 1.4085,17.0642 3.6431,19.0613L3.6206,19.0613L10.812,26.3764L18.0035,19.0613L17.9809,19.0613C20.2156,17.0642 21.6241,14.1485 21.6241,10.901Z"
+        android:strokeWidth="1"
+        android:fillColor="#AEE0FF"
+        android:fillType="nonZero"
+        android:strokeColor="#00000000" />
+    <path
+        android:pathData="M4.1083,12.2261L8.3483,13.9942C8.5968,14.0979 8.7931,14.2973 8.8926,14.5475L10.5678,18.758C10.6699,19.0146 10.9607,19.1399 11.2172,19.0378C11.3418,18.9882 11.4413,18.8907 11.4933,18.7671L16.3918,7.1235C16.4989,6.8689 16.3794,6.5758 16.1248,6.4687C16.0015,6.4168 15.8625,6.4165 15.739,6.4679L4.1088,11.303C3.8539,11.409 3.7331,11.7016 3.8391,11.9566C3.8898,12.0785 3.9865,12.1754 4.1083,12.2261Z"
+        android:strokeWidth="1"
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:strokeColor="#00000000" />
+    <path
+        android:pathData="M11.7053,21.513C13.7516,21.513 15.4105,19.8312 15.4105,17.7565C15.4105,15.6819 13.7516,14 11.7053,14C9.6589,14 8,15.6819 8,17.7565C8,19.8312 9.6589,21.513 11.7053,21.513Z"
+        android:strokeWidth="1"
+        android:fillColor="#AEE0FF"
+        android:fillAlpha="0.3"
+        android:fillType="nonZero"
+        android:strokeColor="#00000000" />
+</vector>

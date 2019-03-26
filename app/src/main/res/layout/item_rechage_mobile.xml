@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.RechargeMobileOptionModel.Data.RechargeKindModel"/>
+    </data>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_recharge_mobile_specific"
+                android:gravity="center"
+                android:id="@+id/item"
+                android:orientation="vertical">
+
+            <TextView
+                    android:text="@{m.name}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccentSecond"
+                    tools:text="10 元"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{m.priceStr}"
+                    android:textColor="@color/colorAccentSecond"
+                    android:textSize="12dp"
+                    tools:text="售价9.98元"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

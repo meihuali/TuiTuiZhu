@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="v"
+            type="com.designer.library.base.BaseActivity" />
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.PublishTaskModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/windowBackground"
+                android:orientation="vertical"
+                android:paddingBottom="58dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:divider="@drawable/divider_horizontal_padding_15dp"
+                    android:orientation="vertical"
+                    android:showDividers="middle"
+                    tools:context=".ui.activity.publish.PublishTaskPayActivity">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="活动标题：" />
+
+                        <TextView
+                            android:id="@+id/tv_ad_title"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="4dp"
+                            android:singleLine="true"
+                            android:text="@{m.name}"
+                            tools:text="你离大神只有一步之遥" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="活动分类：" />
+
+                        <TextView
+                            android:id="@+id/tv_ad_category"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="4dp"
+                            android:singleLine="true"
+                            android:text="@{m.taskCategoryName}"
+                            tools:text="转发活动" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="开始时间：" />
+
+                        <TextView
+                            android:id="@+id/tv_start_time"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="4dp"
+                            android:singleLine="true"
+                            android:text="@{m.startTimeStr}"
+                            tools:text="2018年8月12日 00:00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="结束时间：" />
+
+                        <TextView
+                            android:id="@+id/tv_end_time"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="4dp"
+                            android:singleLine="true"
+                            android:text="@{m.endTimeStr}"
+                            tools:text="2018年9月12日 24:00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="支付金额：" />
+
+                        <TextView
+                            android:id="@+id/tv_money"
+                            rmb="@{m.totalMoney}"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="4dp"
+                            android:textColor="@color/colorAccent"
+                            tools:text="¥200.00" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="选择支付方式" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fl_pay_way_tangdou"
+                        gone="@{m.beanNum > 0}"
+                        android:layout_width="match_parent"
+                        android:layout_height="57dp">
+
+                        <TextView
+                            android:id="@+id/tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="57dp"
+                            android:drawableLeft="@drawable/ic_tangdou"
+                            android:drawablePadding="14dp"
+                            android:gravity="center_vertical"
+                            android:text="@{m.tangdouName}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="糖豆" />
+
+                        <TextView
+                            android:id="@+id/tv_tangdou"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="4dp"
+                            android:ellipsize="marquee"
+                            android:singleLine="true"
+                            android:text="@{m.totalTangDou}"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tv"
+                            app:layout_constraintLeft_toRightOf="@id/tv"
+                            app:layout_constraintRight_toLeftOf="@id/tv3"
+                            tools:text="(5个)" />
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="@{m.tangdouRequirePay}"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tv"
+                            app:layout_constraintHorizontal_bias="1"
+                            app:layout_constraintLeft_toRightOf="@id/tv_tangdou"
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:text="3个" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fl_pay_way_balance"
+                        gone="@{m.surplusIncome > 0}"
+                        android:layout_width="match_parent"
+                        android:layout_height="57dp">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="57dp"
+                            android:drawableLeft="@drawable/ic_balance"
+                            android:drawablePadding="14dp"
+                            android:gravity="center"
+                            android:text="零钱" />
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:ellipsize="marquee"
+                            android:singleLine="true"
+                            android:text="@{m.totalBalance}"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+                            app:layout_constraintLeft_toRightOf="@id/tv1"
+                            app:layout_constraintRight_toLeftOf="@id/tv2"
+                            tools:text="(1.5元)" />
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="@{m.balancerequirePay}"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+                            app:layout_constraintLeft_toRightOf="@id/tv_balance"
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:text="3元" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <LinearLayout
+                        gone="@{m.thirdPayWayVisible}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="46dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_pay_way_alipay"
+                            click="@{v}"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_alipay" />
+
+                        <ImageView
+                            android:id="@+id/iv_pay_way_wx"
+                            click="@{v}"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_wxpay" />
+
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/rg_pay_way"
+                        gone="@{m.thirdPayWayVisible}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="24dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_pay_way_ali"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableTop="@drawable/selector_checkbox_12dp"
+                            android:drawablePadding="2dp"
+                            android:gravity="center"
+                            android:text="支付宝"
+                            android:textColor="@drawable/selector_accent_black_text_color" />
+
+                        <RadioButton
+                            android:id="@+id/rb_pay_way_wx"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableTop="@drawable/selector_checkbox_12dp"
+                            android:drawablePadding="2dp"
+                            android:gravity="center"
+                            android:text="微信"
+                            android:textColor="@drawable/selector_accent_black_text_color" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@drawable/shadow_accent" />
+
+            <Button
+                android:id="@+id/tv_confirm"
+                click="@{v}"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_accent"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:text="@{m.btnShowMoney}"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="确认并支付200.00元" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

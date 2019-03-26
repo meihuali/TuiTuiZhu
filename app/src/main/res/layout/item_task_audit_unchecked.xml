@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.ApplyStateListModel.Data.Result"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/item"
+            android:background="@drawable/bg_card_shadow">
+
+        <CheckBox
+                android:id="@+id/item_task_audit_check_box"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="8dp"
+                android:button="@drawable/check_box_bg"
+                android:checked="@{m.checked}"
+                app:layout_constraintBottom_toBottomOf="@id/item_task_audit_head_iv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/item_task_audit_head_iv"/>
+
+        <ImageView
+                android:id="@+id/item_task_audit_head_iv"
+                imgCircular="@{m.headImg}"
+                placeHolder="@{@drawable/ic_user_portrait_default}"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/item_task_audit_check_box"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/item_task_audit_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:singleLine="true"
+                tools:text="田野少年"
+                android:text="@{m.nickName}"
+                android:textColor="@color/textColor"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@id/item_task_audit_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/item_task_audit_head_iv"
+                app:layout_constraintTop_toTopOf="@id/item_task_audit_head_iv"
+                app:layout_constraintVertical_chainStyle="packed"/>
+
+        <TextView
+                android:id="@+id/item_task_audit_time"
+                dateFormat="@{`yyyy-MM-dd HH:mm`}"
+                dateFromSecond="@{m.createTime/1000}"
+                android:layout_width="0dp"
+                android:layout_marginRight="4dp"
+                android:layout_height="wrap_content"
+                tools:text="2018-11-10 17:24"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/textDescription"
+                android:textSize="12dp"
+                app:layout_constraintRight_toLeftOf="@id/tv_distance"
+                app:layout_constraintBottom_toBottomOf="@id/item_task_audit_head_iv"
+                app:layout_constraintLeft_toRightOf="@id/item_task_audit_head_iv"
+                app:layout_constraintTop_toBottomOf="@id/item_task_audit_name"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_distance"
+                tools:text="5km"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:visibility="gone"
+                android:text="@{m.headImg}"
+                android:textColor="@color/textDescription"
+                app:layout_constraintBaseline_toBaselineOf="@id/item_task_audit_time"
+                app:layout_constraintRight_toRightOf="parent"
+                android:drawableRight="@drawable/location"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/item_task_audit_content"
+                gone="@{m.subContent != null}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                tools:text="我今天已经按照你的要求转发了您的广告你看可不可 以对你的广告很感兴趣哦！"
+                android:layout_marginEnd="10dp"
+                android:text="@{m.subContent}"
+                android:textColor="@color/textDescription"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_task_audit_head_iv"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/item_task_audit_rv"
+                gone="@{m.subFiles != null}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/item_task_audit_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/3/18 5:29 PM
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:height="44dp"/>
+    <corners android:radius="44dp"/>
+    <solid android:color="#FECC65"/>
+</shape>

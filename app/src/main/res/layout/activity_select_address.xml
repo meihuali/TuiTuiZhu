@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.designer.library.base.BaseActivity"/>
+
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:elevation="4dp"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+
+            <FrameLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp">
+
+                <TextView
+                        android:id="@+id/title"
+                        style="@style/ToolbarTitle"
+                        android:text="位置"/>
+
+                <ImageView
+                        android:id="@+id/return_iv"
+                        android:layout_width="50dp"
+                        android:layout_height="?attr/actionBarSize"
+                        android:scaleType="center"
+                        finish="@{true}"
+                        android:src="@drawable/ic_action_back"/>
+
+                <TextView
+                        android:layout_gravity="right"
+                        android:id="@+id/tv_confirm"
+                        android:layout_width="60dp"
+                        click="@{v}"
+                        android:layout_height="?attr/actionBarSize"
+                        android:gravity="center"
+                        android:text="确定"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:textColor="@color/black"/>
+
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/tv_search"
+                    click="@{v}"
+                    android:drawableLeft="@drawable/ic_search_edit"
+                    android:layout_width="match_parent"
+                    android:drawablePadding="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="36dp"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/bg_input_search"
+                    android:gravity="center_vertical"
+                    android:text="搜索地址"
+                    android:textColor="@color/textDescription"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent">
+
+            <com.amap.api.maps.MapView
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toTopOf="@id/rv_address"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_search"/>
+
+            <ImageView
+                    android:id="@+id/iv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginStart="8dp"
+                    click="@{v}"
+                    android:contentDescription="@null"
+                    android:layout_gravity="left|bottom"
+                    android:src="@drawable/mine_location"
+                    app:layout_constraintBottom_toBottomOf="@id/map"
+                    app:layout_constraintStart_toStartOf="@id/map"/>
+
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_address"
+                android:elevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/map"/>
+
+    </LinearLayout>
+
+</layout>

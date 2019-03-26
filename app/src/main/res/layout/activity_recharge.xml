@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-16 上午10:30
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.RechargeActivity"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/constraint_card"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_horizontal"
+                tools:context=".ui.activity.RechargeActivity">
+
+            <ImageView
+                    android:src="@drawable/rectangle_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageView
+                    android:id="@+id/rectangle_top_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/we_ggyecz"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                    android:id="@+id/recharge_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_35"
+                    android:text="请选择充值方式"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_top_iv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_top_iv"
+                    tools:ignore="HardcodedText"/>
+
+            <RadioGroup
+                    android:id="@+id/radio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_35"
+                    android:layout_marginTop="@dimen/dp_31"
+                    android:layout_marginEnd="@dimen/dp_35"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recharge_tv">
+
+                <RadioButton
+                        android:id="@+id/zfb_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_alipay"
+                        android:drawableEnd="@drawable/recharge_rb_select"
+                        android:drawablePadding="@dimen/dp_16"
+                        android:text="支付宝"
+                        android:textColor="@color/pay_way_select"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="HardcodedText"/>
+
+                <RadioButton
+                        android:id="@+id/wx_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="@dimen/dp_32"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_wxpay"
+                        android:drawableEnd="@drawable/recharge_rb_select"
+                        android:drawablePadding="@dimen/dp_16"
+                        android:text="微信"
+                        android:textColor="@color/pay_way_select"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="HardcodedText"/>
+
+                <RadioButton
+                        android:id="@+id/yl_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="@dimen/dp_32"
+                        android:button="@null"
+                        android:drawableStart="@drawable/ic_union"
+                        android:drawableEnd="@drawable/recharge_rb_select"
+                        android:drawablePadding="@dimen/dp_16"
+                        android:text="银联"
+                        android:textColor="@color/pay_way_select"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="HardcodedText"/>
+
+                <RadioButton
+                        android:id="@+id/offline_pay_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="@dimen/dp_32"
+                        android:button="@null"
+                        android:drawableEnd="@drawable/recharge_rb_select"
+                        android:drawablePadding="@dimen/dp_16"
+                        android:text="上传线下支付凭证"
+                        android:textColor="@color/pay_way_select"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="HardcodedText"/>
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+                android:id="@+id/confirm"
+                style="@style/confirm_style"
+                click="@{v}"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_width="0dp"
+                app:layout_constraintEnd_toEndOf="@id/constraint_card"
+                app:layout_constraintStart_toStartOf="@id/constraint_card"
+                app:layout_constraintTop_toBottomOf="@id/constraint_card"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

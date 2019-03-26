@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TTZ
+  ~ Author：马靖乘
+  ~ Date：18-12-7 上午10:08
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.SendJellyBeanNumberActivity"/>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.UserDetailModel.Data"/>
+
+        <variable
+                name="model"
+                type="com.tonghechuanmei.android.model.SendJellyBeanPhoneModel.Data"/>
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".ui.activity.SendJellyBeanNumberActivity">
+
+        <ImageView
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_25"
+                imgCircular="@{model.headImg}"
+                android:src="@drawable/ic_user_portrait_default"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textSize="@dimen/sp_15"
+                android:text="@{model.nickName}"
+                tools:text="卡哇伊"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="@{model.phone}"
+                tools:text="15188888888"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_11"
+                android:text="@{m.sendNum}"
+                tools:text="赠送糖豆"/>
+
+        <EditText
+                android:id="@+id/et_send_number"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@null"
+                android:inputType="number"
+                android:hint="@{m.sendNumHint}"
+                tools:ignore="HardcodedText"/>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/divider"/>
+
+        <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="确认赠送"
+                click="@{v}"
+                android:textColor="@color/white"
+                android:background="@drawable/start_end_ground_bg"
+                android:layout_marginTop="@dimen/dp_11"
+                android:gravity="center"
+                android:textSize="@dimen/sp_15"
+                tools:ignore="HardcodedText"/>
+    </LinearLayout>
+</layout>

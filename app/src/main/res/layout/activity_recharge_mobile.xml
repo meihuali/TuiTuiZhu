@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.activity.recharge.RechargeMobileActivity"/>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.RechargeMobileOptionModel.Data"/>
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".ui.activity.recharge.RechargeMobileActivity">
+
+        <FrameLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white">
+
+            <ImageView
+                    android:id="@+id/action_back"
+                    style="@style/ToolbarButton"
+                    finish="@{true}"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_action_back"/>
+
+            <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/ToolbarTitle"
+                    android:text="充值中心"/>
+
+            <ImageView
+                    click="@{v}"
+                    android:id="@+id/iv_recharge_record"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_recharge_record"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+                android:id="@+id/ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="点击去认证"
+                    click="@{v}"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_phone"
+                    android:text="@{m.phone}"
+                    android:textSize="24dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textDescription"
+                    android:textSize="10dp"
+                    android:text="充值号码"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="充话费"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_recharge_specific"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:text="更多充值"
+                    android:layout_marginTop="28dp"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:text="流量充值"
+                    android:textSize="12dp"
+                    android:layout_marginTop="18dp"
+                    click="@{v}"
+                    android:id="@+id/tv_recharge_flow"
+                    android:drawablePadding="8dp"
+                    android:drawableTop="@drawable/ic_recharge_flow"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

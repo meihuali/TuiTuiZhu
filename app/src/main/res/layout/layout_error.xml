@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/19/18 11:14 PM
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:gravity="center"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:drawableTop="@drawable/bg_error_default"
+            android:layout_width="wrap_content"
+            android:text="请检查网络连接~"
+            android:drawablePadding="20dp"
+            android:textColor="@color/textDescription"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

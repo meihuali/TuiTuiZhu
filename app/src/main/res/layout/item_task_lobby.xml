@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.TaskListModel.Data.Result" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:foreground="?selectableItemBackgroundBorderless"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/iv_user_portrait"
+                imgCircular="@{m.headImg}"
+                placeHolder="@{@drawable/ic_user_portrait_default}"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_user_portrait_default"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginRight="4dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{m.nickName}"
+                app:layout_constraintBottom_toTopOf="@id/iv_user_level"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toRightOf="@id/iv_user_portrait"
+                app:layout_constraintRight_toLeftOf="@+id/tv_price"
+                app:layout_constraintTop_toTopOf="@id/iv_user_portrait"
+                tools:text="当两个文本并排时右侧有一个按钮, 但是两个文本可能长度都是不确定的包裹类型. 把任何一个文本作为按钮的约束都可能导致按钮覆盖住另一个文本内容. 这个时候就需要Barriers." />
+
+            <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@{m.award}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="¥200"/>
+
+            <ImageView
+                android:id="@+id/iv_user_level"
+                img="@{m.memberLevelLogo}"
+                placeHolder="@{@drawable/ic_level_default}"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_level_default"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user_portrait"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toLeftOf="@id/tv_user_name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_name" />
+
+            <TextView
+                android:id="@+id/tv"
+                invisible="@{!m.goApplyVisible}"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_apply_task"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@{m.taskStatus}"
+                android:textColor="@color/colorAccent"
+                android:textSize="12dp"
+                android:visibility="visible"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_address"
+                app:layout_goneMarginRight="60dp"
+                tools:text="去报名" />
+
+            <TextView
+                android:id="@+id/tv1"
+                invisible="@{m.goApplyVisible}"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:drawableRight="@drawable/ic_task_lobby_more"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="去报名"
+                android:textColor="@color/colorAccent"
+                android:textSize="12dp"
+                android:visibility="invisible"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:drawableLeft="@drawable/ic_task_lobby_title"
+                android:drawablePadding="4dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@{m.name}"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_user_portrait"
+                tools:text="你离大神只有一步之遥一步一步" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{m.content}"
+                android:textColor="@color/textDescription"
+                android:textSize="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                tools:text="向公众介绍商品、服务内容或文娱体育节目的一种宣传方式， 一般通过报刊一般通过报刊一般通过报刊…" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_11"
+                android:drawableLeft="@drawable/location"
+                android:drawablePadding="4dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{m.address}"
+                android:textColor="@color/textDescription"
+                android:textSize="12dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/tv_distance"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content"
+                tools:text="浙江省杭州市西湖区云溪小镇中大银座5号楼浙江省杭州市西湖区云溪小镇中大银座5号楼" />
+
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:text="@{m.distance}"
+                android:textColor="@color/textDescription"
+                android:textSize="12dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_address"
+                app:layout_constraintLeft_toRightOf="@id/tv_address"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="300km" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

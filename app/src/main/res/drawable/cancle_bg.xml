@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：tuituizhu
+  ~ Author：马靖乘
+  ~ Date：18-12-4 下午11:02
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:bottomLeftRadius="@dimen/dp_10"/>
+    <solid android:color="@color/gray"/>
+</shape>

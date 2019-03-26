@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/28/18 10:55 PM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.tonghechuanmei.android.ui.dialog.DateDialog"/>
+    </data>
+
+    <LinearLayout
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+        <FrameLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+            <TextView
+                    click="@{v}"
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="60dp"
+                    android:text="取消"
+                    android:gravity="center"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:layout_gravity="left"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:id="@+id/tv_confirm"
+                    click="@{v}"
+                    android:layout_width="60dp"
+                    android:text="确定"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+
+        </FrameLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:background="@drawable/divider_horizontal"
+                android:layout_height="1px"/>
+
+        <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:background="@color/white"
+                tools:context=".ui.dialog.DateDialog">
+
+            <com.designer.library.component.picker.ScrollPickerView
+                    android:id="@+id/sp_year"
+                    android:nestedScrollingEnabled="true"
+                    android:layout_width="wrap_content"
+                    app:scrollpicker_textFormat="2018"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:layout_width="24dp"
+                    android:text="年"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+
+            <com.designer.library.component.picker.ScrollPickerView
+                    android:id="@+id/sp_month"
+                    android:layout_width="wrap_content"
+                    app:scrollpicker_textFormat="12"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:layout_width="24dp"
+                    android:text="月"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+
+            <com.designer.library.component.picker.ScrollPickerView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/sp_day"
+                    app:scrollpicker_textFormat="19"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:layout_width="24dp"
+                    android:text="日"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+
+            <com.designer.library.component.picker.ScrollPickerView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/sp_hour"
+                    app:scrollpicker_textFormat="06"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:layout_width="24dp"
+                    android:text="时"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+
+            <com.designer.library.component.picker.ScrollPickerView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/sp_minute"
+                    app:scrollpicker_textFormat="25"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:layout_width="24dp"
+                    android:text="分"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

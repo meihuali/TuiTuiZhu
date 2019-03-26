@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/23/18 5:07 PM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+    <data>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.TaskTypeModel.Data"/>
+    </data>
+
+    <ImageView
+            img="@{m.categoryImage}"
+            android:id="@+id/item"
+            android:layout_width="wrap_content"
+            android:src="@drawable/bg_task_lobby_type"
+            placeHolder="@{@drawable/bg_task_lobby_type}"
+            android:layout_height="wrap_content"/>
+
+</layout>

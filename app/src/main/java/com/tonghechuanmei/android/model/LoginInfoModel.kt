@@ -1,0 +1,71 @@
+package com.tonghechuanmei.android.model
+
+/**
+ * Author     : shandirong
+ * Date       : 2018/11/25 19:27
+ */
+data class LoginInfoModel(
+    var `data`: List<Data> = listOf(),
+    var msg: String = "",
+    var success: Boolean = false
+) {
+    data class Data(
+        var address: String? = null,
+        var age: Int = 0,
+        var alipayName: String? = null,
+        var alipayNo: String? = null,
+        var allContributeNum: String?,
+        var appletOpenid: String? = null,
+        var bankCardNo: String? = null,
+        var bankOfDeposit: String? = null,
+        var beanNum: Double = 0.0,
+        var birthday: String? = null,
+        var cardholder: String? = null,
+        var createTime: Long = 0,
+        var email: String? = null,
+        var getuiCid: String? = null,
+        var headImg: String = "",
+        var id: String = "",
+        var idCard: String? = null,
+        var isSupplier: String = "",
+        var keyword: String? = null,
+        var lat: String? = null,
+        var lng: String? = null,
+        var memberId: String? = null,
+        var memberLevelId: String? = null,
+        var memberLevelLogo: String? = null,
+        var name: String? = null,
+        var nickName: String = "",
+        var noRecorded: String? = null,
+        var phone: String? = null,
+        var phoneType: String? = null,
+        var postcode: String? = null,
+        var pwd: String = "",
+        var qq: String? = null,
+        var qqOpenid: String? = null,
+        var qqUid: String? = null,
+        var realName: String? = null,
+        var refereeUserId: String? = null,
+        var refereeUserNum: Int = 0,
+        var remark: String? = null,
+        var serverArea: String? = null,
+        var serverAreaId: String? = null,
+        var sex: String? = null,
+        var shanghejiaId: String? = null,
+        var sort: Int = 0,
+        var state: String = "",
+        var surplusIncome: Long = 0,
+        var todayContributeNum: Double = 0.0,
+        var todayContributeUpNum: Double = 0.0,
+        var totalIncome: Long = 0,
+        var userLink: String = "",
+        var uuid: String? = null,
+        var weixinNo: String? = null,
+        var weixinOpenid: String = "",
+        var weixinUid: String? = null,
+        var weixinUnionid: String = "",
+        var xinlangOpenid: String = "",
+        var xinlangUid: String? = null,
+        var loginTimes: Int = 0
+    )
+}

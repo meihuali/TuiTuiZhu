@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <CheckBox
+                android:id="@+id/task_un_audit_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:button="@drawable/check_box_bg"
+                android:paddingStart="5dp"
+                android:text="全选"
+                android:textColor="@color/textColor"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.designer.library.component.recycler.PageRefreshLayout
+                android:id="@+id/task_un_audit_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/task_un_audit_check_box">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/task_un_audit_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </com.designer.library.component.recycler.PageRefreshLayout>
+
+        <TextView
+                android:id="@+id/task_un_audit_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/sh_tg"
+                android:gravity="center"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:text="通过"
+                app:layout_constraintLeft_toRightOf="@id/task_un_audit_un_pass"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+                android:id="@+id/task_un_audit_un_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintRight_toLeftOf="@id/task_un_audit_pass"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/sh_tg"
+                android:gravity="center"
+                android:text="不通过"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

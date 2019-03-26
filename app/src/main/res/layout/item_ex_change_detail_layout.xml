@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：TTPig
+  ~ Author：马靖乘
+  ~ Date：18-11-29 下午3:36
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="m"
+                type="com.tonghechuanmei.android.model.ExChangeDetailModel"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/title"
+                tools:text="我是文字"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/sp_14"
+                android:text="@{m.content}"
+                gone="@{m.showContent}"
+                android:textColor="@color/textColor"
+                android:layout_width="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:layout_height="wrap_content"/>
+
+        <ImageView
+                android:id="@+id/details_image_iv"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                img="@{m.urlImg}"
+                gone="@{m.showUrlImg}"
+                placeHolder="@{@drawable/ic_normal_bg}"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.designer.library.widget.slidecard.CardSlidePanel
+                android:id="@+id/image_slide_panel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card:bottomMarginTop="38dp"
+                card:itemMarginTop="10dp"
+                card:yOffsetStep="13dp"/>
+    </LinearLayout>
+</layout>

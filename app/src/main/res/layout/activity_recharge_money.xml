@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-16 下午5:07
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="m"
+                type="String"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.activity.RechargeMoneyActivity">
+
+        <TextView
+                android:id="@+id/recharge_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_29"
+                android:text="@{m}"
+                android:textColor="@color/colorAccentSecond"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText"/>
+
+        <TextView
+                android:id="@+id/recharge_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_43"
+                android:text="充值余额"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintStart_toStartOf="@+id/recharge_tv"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_tv"
+                tools:ignore="HardcodedText"/>
+
+        <TextView
+                android:id="@+id/recharge_left_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_45"
+                android:text="¥"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintStart_toStartOf="@+id/recharge_money"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_money"
+                tools:ignore="HardcodedText"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="40sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/recharge_left_tv"
+                app:layout_constraintStart_toEndOf="@+id/recharge_left_tv"
+                tools:text="170.5"/>
+
+        <FrameLayout
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_31"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_31"
+                android:background="@color/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_left_tv"/>
+
+        <TextView
+                android:id="@+id/confirm"
+                style="@style/confirm_style"
+                android:layout_marginTop="@dimen/dp_48"
+                app:layout_constraintTop_toBottomOf="@+id/line"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

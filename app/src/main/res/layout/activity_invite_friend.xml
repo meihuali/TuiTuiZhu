@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/3/18 5:18 PM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="v"
+                type="com.designer.library.base.BaseActivity"/>
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                tools:context=".ui.activity.InviteFriendActivity">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="通过此专属二维码下载的任何用户，你将额外获得其 每笔收入。"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal">
+
+
+                <ImageView
+                        android:id="@+id/iv"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/iv1"
+                        android:layout_width="wrap_content"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bg_red_packet"/>
+
+                <ImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/constraint_qr_code"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bg_red_packet_1"
+                        app:layout_constraintTop_toBottomOf="@id/iv"/>
+
+                <ImageView
+                        android:id="@+id/iv3"
+                        android:layout_width="70dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/ic_red_packet_user_portrait_pink"
+                        app:layout_constraintBottom_toBottomOf="@id/iv1"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintLeft_toLeftOf="@id/iv1"
+                        app:layout_constraintRight_toRightOf="@id/iv1"
+                        app:layout_constraintTop_toTopOf="@id/iv1"/>
+
+                <ImageView
+                        android:id="@+id/iv_user_portrait"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/ic_user_portrait_default"
+                        app:layout_constraintBottom_toBottomOf="@id/iv3"
+                        app:layout_constraintLeft_toLeftOf="@id/iv3"
+                        app:layout_constraintRight_toRightOf="@id/iv3"
+                        app:layout_constraintTop_toTopOf="@id/iv3"/>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_qr_code"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:background="#ed4658"
+                        app:layout_constraintBottom_toTopOf="@id/iv2"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        app:layout_constraintVertical_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv1">
+
+                    <ImageView
+                            android:id="@+id/iv_qr_code"
+                            app:layout_constraintDimensionRatio="1:1"
+                            android:layout_width="0dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@color/white"
+                            android:layout_height="match_parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                        android:id="@+id/iv2"
+                        android:layout_width="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bg_red_packet_2"
+                        app:layout_constraintTop_toBottomOf="@id/constraint_qr_code"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                    click="@{v}"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btn_accent_second_rounded"
+                    android:text="保存二维码"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

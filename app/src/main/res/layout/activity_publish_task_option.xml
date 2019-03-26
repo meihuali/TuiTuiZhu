@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018,巨神科技有限公司 All rights reserved.
+  ~ Project：TuiTuiZhu
+  ~ Author：两津勘吉
+  ~ Date：12/23/18 3:36 AM
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="v"
+            type="com.designer.library.base.BaseActivity" />
+
+        <variable
+            name="m"
+            type="com.tonghechuanmei.android.model.PublishTaskModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterEnabled="true"
+                app:hintEnabled="false"
+                app:counterMaxLength="20">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_edit"
+                    android:hint="请填写活动名称"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:text="@={m.name}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:text="活动时间"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_start_time"
+                    click="@{v}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_edit"
+                    android:gravity="center"
+                    android:hint="设置开始时间"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="@{m.startTimeStr}" />
+
+                <TextView
+                    android:id="@+id/tv_end_time"
+                    click="@{v}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="24dp"
+                    android:background="@drawable/bg_edit"
+                    android:gravity="center"
+                    android:hint="设置结束时间"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="@{m.endTimeStr}" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:text="报名人数"
+                android:textStyle="bold" />
+
+            <EditText
+                enable="@{!m.modifyTask}"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:maxLength="15"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_edit"
+                android:hint="请输入报名人数"
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="@={m.signUpNum}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:text="悬赏金额"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_task_price"
+                enable="@{!m.modifyTask}"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_edit"
+                android:maxLength="15"
+                android:hint="请点击此处输入悬赏金额"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:text="@={m.userInputAwardMoney}" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@drawable/shadow_accent" />
+
+                <Button
+                    android:id="@+id/btn_next"
+                    click="@{v}"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_accent"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:text="下一步"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>

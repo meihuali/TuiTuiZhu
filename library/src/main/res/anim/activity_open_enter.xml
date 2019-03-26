@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/21/18 1:36 PM
+  -->
+
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+           android:duration="300"
+           android:fromXDelta="100%p"
+           android:toXDelta="0"/>
+

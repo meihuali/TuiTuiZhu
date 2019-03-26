@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018,米珈科技有限公司 All rights reserved.
+  ~ Project：ZMT
+  ~ Author：马靖乘
+  ~ Date：18-11-15 下午2:01
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="m"
+                type="String"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp">
+
+        <ImageView
+                android:id="@+id/fatigue_iv"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/wdqb_shj"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/fatigue_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text="上禾佳兑换码："
+                android:textColor="@color/textColor"
+                app:layout_constraintStart_toEndOf="@id/fatigue_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText"/>
+
+
+        <TextView
+                android:id="@+id/fatigue_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:textColor="@color/colorAccentSecond"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText"
+                tools:text="80.00"/>
+
+        <TextView
+                android:id="@+id/fatigue_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:textColor="@color/textDescription"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/fatigue_title"
+                tools:ignore="HardcodedText"
+                tools:text="2018-10-01"/>
+
+        <FrameLayout
+                android:id="@+id/line1"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="@color/divider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fatigue_price"
+                app:layout_constraintStart_toStartOf="@+id/fatigue_title"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

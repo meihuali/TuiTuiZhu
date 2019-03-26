@@ -1,0 +1,29 @@
+<!--
+  ~ Copyright (C) 2018,杭州燊禾电子商务有限公司 All rights reserved.
+  ~ Project：TongHeChuanMei
+  ~ Author：姜涛
+  ~ Date：11/20/18 5:01 PM
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:height="18dp"
+        android:viewportHeight="18"
+        android:viewportWidth="18"
+        android:width="18dp">
+    <path
+            android:fillAlpha="0.3"
+            android:fillColor="#333333"
+            android:fillType="nonZero"
+            android:pathData="M8.4979,16.9901C3.8179,16.9901 0.0114,13.1836 0.0114,8.5036C0.0114,3.8236 3.8179,0.0152 8.4979,0.0152C13.1779,0.0152 16.9844,3.8217 16.9844,8.5017C16.9844,13.1817 13.1779,16.9901 8.4979,16.9901ZM8.4979,1.6314C4.7084,1.6314 1.6276,4.7141 1.6276,8.5017C1.6276,12.2893 4.7103,15.372 8.4979,15.372C12.2855,15.372 15.3682,12.2893 15.3682,8.5017C15.3682,4.7141 12.2874,1.6314 8.4979,1.6314Z"
+            android:strokeAlpha="0.3"
+            android:strokeColor="#00000000"
+            android:strokeWidth="1"/>
+    <path
+            android:fillAlpha="0.3"
+            android:fillColor="#333333"
+            android:fillType="nonZero"
+            android:pathData="M17.1872,18C16.9806,18 16.7741,17.9204 16.6149,17.7632L14.796,15.9442C14.4796,15.6278 14.4796,15.1162 14.796,14.8017C15.1105,14.4853 15.624,14.4853 15.9385,14.8017L17.7575,16.6206C18.0739,16.9371 18.0739,17.4486 17.7575,17.7632C17.6021,17.9223 17.3937,18 17.1872,18Z"
+            android:strokeAlpha="0.3"
+            android:strokeColor="#00000000"
+            android:strokeWidth="1"/>
+</vector>
